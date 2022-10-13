@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .column-2 {
+            width: 50%;
+            float: left;
+        }
+        
+        .column-3 {
+            width: 25%;
+            float: left;
+        }
+        
+        .column-4 {
+            width: 33.33%;
+            float: left;
+        }
+        /*Clases auxiliares*/
+        
+        .yellow {
+            background-color: yellow;
+            padding: 50px;
+        }
+        .green {
+            background-color: rgb(90, 125, 90);
+            padding: 50px;
+        }
+        .gray {
+            background-color: gray;
+            padding: 50px;
+        }
+        
+       
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width:600px) {
+            .column-2 {
+                width: 100%;
+            }
+            .column-3 {
+                width: 50%;
+            }
+            .column-4 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div class="row">
+        <div class="column-2 yellow">1</div>
+        <div class="column-2 yellow">2</div>
+    </div>
+    <div class="row">
+        <div class="column-3 green">3</div>
+        <div class="column-3 green">4</div>
+        <div class="column-3 green">5</div>
+        <div class="column-3 green">6</div>
+    </div>
+    <div class="row">
+        <div class="column-4 gray">7</div>
+        <div class="column-4 gray">8</div>
+        <div class="column-4 gray">9</div>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

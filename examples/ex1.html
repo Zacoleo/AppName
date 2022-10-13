@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            height:75px;
+            background:blue;
+           
+            /* */
+            display:flex; 
+
+            /* DIRECCIÓN
+            Ordena las cajas horizontalmente: row, row-reverse
+            o verticalmente: column, column-reverse */
+            flex-direction: row;
+                        
+            /* JUSTIFICACIÓN DE CONTENIDO
+            Distribuye el contenido de las cajas dentro del
+            contenedor horizontalmente: start, center, end, baseline
+            space-between, space-around, space-evenly */
+            justify-content: start; 
+
+            /*DESBORDAMIENTO: 
+            Evita o permite el desbordamiento al llegar al final de línea
+            si las cajas ocupan más de una línea para que sigan en la
+            siguiente: nowrap, wrap, wrap-reverse. Por defecto (nowrap)
+            todos los elementos están en una linea aunque rebase al contenedor  */
+            flex-wrap: wrap;
+
+            /* ALINEACIÓN DE CONTENIDO
+            Distribuye el contenido de las cajas dentro del
+            contenedor verticalmente: start, center, end, 
+            baseline (alinea los elementos en base al texto y no la caja),
+            stretch (alarga la caja hasta el extremo inferior) */
+            align-items: start;
+
+            /* Se usa para alinear los ítems actuando sobre el eje primario 
+            sólo cuando se está en MODO MULTILINEA */
+            align-content: center;
+        }
+        .item{
+
+            display: flex;
+
+            /* ALINEACIÓN INDIVIDUAL (SE APLICA A CAJA, NO AL CONTENEDOR)
+            Distribuye el contenido de las cajas dentro del
+            contenedor verticalmente: start, center, end, baseline,
+            stretch (alarga la caja hasta el extremo inferior) */            
+            align-self: start;
+
+            background:cyan;
+            border-style: solid;
+            border-width: 1px;
+            border-color: black;
+            width:50px;
+        }
+        .itemEspecial{
+            /* Orden caja (SE APLICA A CAJA, NO AL CONTENEDOR)
+            Indica el orden de la caja sin tener en cuenta el orden
+            de aparición */
+            order: 2;
+            /* Tamaño caja (SE APLICA A CAJA, NO AL CONTENEDOR)
+            Indica el tamaño de en proporción a las demás para rellenar
+            todo el ancho del objeto contenedor. Si no se aplica a alguna
+            de las cajas, esta ocupará el espacio del contenido de la misma */
+            flex-grow:2;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="item itemEspecial">1</div>
+        <div class="item ">2</div>
+        <div class="item itemEspecial">3</div>
+    </div>
+</body>
+</html>
